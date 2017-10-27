@@ -15,7 +15,7 @@ app.use(cookieParser());
 // APIs
 var mongoose = require('mongoose');
 //MONGO LAB
-mongoose.connect('mongodb://testU:gustavo01@ds043012.mlab.com:43012/bookshop')
+mongoose.connect('mongodb://bookCartUser:bookCartUser123@ds237445.mlab.com:37445/bookcart')
 //LOCAL DB
 //mongoose.connect('mongodb://localhost:27017/bookshop');
 
@@ -128,11 +128,9 @@ app.get('/images', function(req, res){
     }
     //CREATE AN EMPTY ARRAY
     const filesArr = [];
-    var i = 1;
     // ITERATE ALL IMAGES IN THE DIRECTORY AND ADD TO THE THE ARRAY
     files.forEach(function(file){
       filesArr.push({name: file});
-      i++
     });
     // SEND THE JSON RESPONSE WITH THE ARARY
     res.json(filesArr);
